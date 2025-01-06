@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mytestapp/page_answer/answer1.dart';
+import 'package:mytestapp/page_answer/answer2.dart';
+import 'package:mytestapp/page_answer/answer3.dart';
+import 'package:mytestapp/page_answer/answer4.dart';
+import 'package:mytestapp/page_answer/answer_portal.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,68 +22,24 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Flutter Demo',
-            style: TextStyle(color: Colors.white),
-          ),
-          leading: const Icon(Icons.add),
-          backgroundColor: Colors.purple,
-        ),
-        body: Container(
-          height: 100,
-          width: 100,
-          color: Colors.orange,
-          padding: const EdgeInsets.all(20),
-          margin: const EdgeInsets.all(20),
-          child: const Text('Hello')
-        ),
-          
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print("Hello");
-          },
-          child: const Icon(Icons.phone),
-        ),
-    ));
+      home: const AnswerPortal());
   }
 }
 
+class GreetingWidget extends StatelessWidget {
+  final String name;
+  const GreetingWidget({super.key, required this.name});
 
-/* Week 1
-
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            title: const Text("CPSU Project",
-                style: TextStyle(
-                    color: Colors.white, fontSize: 28, letterSpacing: 2)),
-            backgroundColor: Colors.redAccent,
-            centerTitle: true),
-        backgroundColor: Colors.pink,
-        body: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          Container(
-              padding: const EdgeInsets.all(15),
-              color: Colors.blueAccent,
-              child: const Text("Hello World1")),
-          Container(
-              padding: const EdgeInsets.all(15),
-              color: Colors.blueAccent,
-              child: const Text("Hello World2")),
-          Container(
-              padding: const EdgeInsets.all(15),
-              color: Colors.blueAccent,
-              child: const Text("Hello World3")),
-        ]));
+      appBar: AppBar(
+        title: const Text('Demo APP'),
+        backgroundColor: Colors.orange,
+      ),
+      body: Center(child: Text('Hello, $name'),),);
   }
 }
-
-*/
-
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
